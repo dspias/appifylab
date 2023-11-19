@@ -192,12 +192,8 @@ storage:
 autoload:
 	docker-compose exec php composer dump-autoload
 
-# Nova publish
-nova-publish:
-	docker-compose exec php php artisan nova:publish
-
 # Install the environment
-install: build env-api env-client composer-install key storage permissions migrate nova-publish rc
+install: build env-api env-client composer-install key storage permissions migrate rc
 
 
 #-----------------------------------------------------------
